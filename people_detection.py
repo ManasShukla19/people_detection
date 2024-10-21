@@ -32,9 +32,11 @@ def people_count():
     global current_people_count
 
     # Load the YOLOv8 model
-    model = YOLO("yolo11x.pt")
+    model = YOLO("yolo11x-pose.pt")
 
-    cap = cv2.VideoCapture(0)
+    rtsp_url = 'rtsp://boschcamera:12345678@10.222.74.239/stream1'
+
+    cap = cv2.VideoCapture(rtsp_url)
     if not cap.isOpened():
         st.error("Error: Could not open video device")
         return None
