@@ -152,4 +152,3 @@ if not st.session_state.running:
             width=700,
             height=400
         ))
-
